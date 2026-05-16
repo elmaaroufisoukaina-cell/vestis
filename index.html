@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr" class="dark">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VESTIS — Mon Dressing Intelligent</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,600;0,700;1,400;1,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "bg": "#08080F","surface": "#111118","surface-mid": "#18181F","surface-high": "#222230",
+            "on-surface": "#E4E1EA","on-surface-dim": "#8A87A0","primary": "#00F0FF",
+            "secondary": "#C084FC","accent": "#7C3AED","border-dim": "rgba(255,255,255,0.07)","border-glow": "rgba(0,240,255,0.25)"
+          },
+          fontFamily: { serif: ["Noto Serif","serif"], sans: ["Plus Jakarta Sans","sans-serif"] }
+        }
+      }
+    }
+  </script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="module" src="/src/main.jsx"></script>
+</body>
+</html>
