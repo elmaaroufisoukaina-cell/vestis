@@ -6,11 +6,15 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; }
 
-body {
+html, body {
   background-color: #08080F;
   color: #E4E1EA;
   font-family: "Plus Jakarta Sans", sans-serif;
   min-height: 100dvh;
+  /* Do NOT set overflow here — it breaks position:fixed on iOS */
+}
+
+#root {
   overflow-x: hidden;
 }
 
@@ -589,9 +593,6 @@ input[type=range]::-webkit-slider-thumb {
   transition: all 0.3s;
   font-size: 0.65rem;
   color: #8A87A0;
-  /* Match full card height: image (aspect 3/3) + info bar (~46px) */
-  min-height: calc(100% );
-  align-self: stretch;
 }
 .dressing-upload:hover {
   border-color: rgba(0, 240, 255, 0.5);
@@ -859,13 +860,14 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 @media (max-width: 767px) {
-  .nav-tabs { display: none; }
-  .mobile-nav { display: flex; }
+  .nav-tabs { display: none !important; }
+  .nav-actions { display: none !important; }
+  .mobile-nav { display: flex !important; }
   .page-inner { padding: 1.5rem 1rem 5rem; }
   .wardrobe-grid { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
   .mood-grid { grid-template-columns: repeat(2, 1fr); }
   .fab { bottom: 5rem; right: 1.25rem; }
-  .nav-inner { grid-template-columns: 1fr 1fr; }
+  .nav-inner { grid-template-columns: 1fr; justify-items: center; }
   .nav-logo { font-size: 1.2rem; }
   .outfit-builder { grid-template-columns: repeat(2, 1fr); }
   .picker-grid { grid-template-columns: repeat(3, 1fr); }
